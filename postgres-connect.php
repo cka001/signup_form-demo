@@ -14,7 +14,12 @@ $host        = "host = ec2-54-228-174-49.eu-west-1.compute.amazonaws.com";
 	$dob = $_GET['date'];
 	$psw = $_GET['psw'];
 	
-	
+	echo $name;
+	echo $uname;
+	echo $email;
+	echo $dob;
+	echo $psw;
+
 	 $query = "INSERT INTO CLIENT_DETAILS(C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS) values('$name', '$uname', '$email', '$dob', '$psw')";
 
 	 if($result = pg_query($query))
