@@ -20,7 +20,7 @@ $host        = "host = ec2-54-228-174-49.eu-west-1.compute.amazonaws.com";
 	echo $dob<br>;
 	echo $psw<br>;
 
-	 $query =<<<EOF
+	 /*$query =<<<EOF
 		INSERT INTO CLIENT_DETAILS(C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS) 
 		VALUES ('$name', '$uname', '$email', '$dob', '$psw')";
 		
@@ -35,7 +35,7 @@ $host        = "host = ec2-54-228-174-49.eu-west-1.compute.amazonaws.com";
 		else{
 			echo "Record successfully added to the database\n";
 		}
-		pg_close($db);
+		pg_close($db);*/
 		      
 		      
 	 
