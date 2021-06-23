@@ -14,20 +14,30 @@ $host        = "host = ec2-54-228-174-49.eu-west-1.compute.amazonaws.com";
 	$dob = $_GET['date'];
 	$psw = $_GET['psw'];
 	
-	echo $name;
-	echo $uname;
-	echo $email;
-	echo $dob;
-	echo $psw;
+	echo $name<br>;
+	echo $uname<br>;
+	echo $email<br>;
+	echo $dob<br>;
+	echo $psw<br>;
 
-	 $query = "INSERT INTO CLIENT_DETAILS(C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS) values('$name', '$uname', '$email', '$dob', '$psw')";
-
-	 if($result = pg_query($query))
+	 $query =<<<EOF
+		INSERT INTO CLIENT_DETAILS(C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS) 
+		VALUES ('$name', '$uname', '$email', '$dob', '$psw')";
+		
+	 EOF;
+		
+	 $ret = pg_query($db, $query);
+	 
+	 if(!$ret)
 		{
-			echo "Added Successfully!";
+			echo pg_last_error($db);
                 }
-		else
-		     {echo "Something went wrong!";}
+		else{
+			echo "Record successfully added to the database\n";
+		}
+		pg_close($db);
+		      
+		      
 	 
 		
 		 
