@@ -17,19 +17,23 @@ if(!$db) {
 
 echo "<br>";
 
-$name = $_POST['name'];
-	$dob = $_POST['date'];
-	$email = $_POST['email'];
-	$psw = $_POST['psw'];
-	$mob = $_POST['mob'];
-
-echo"<h4>Sending these detailes to the database:</h4>Name: $name<br> DOB: $dob<br> Email: $email<br> Passsword: $psw<br> Mobile: $mob<br>";
+$name = $_GET['name'];
+	$uname = $_GET['uname'];
+	$email = $_GET['email'];
+	$dob = $_GET['date'];
+	$psw = $_GET['psw'];
+	
+echo $name;
+echo $uname;
+echo $email;
+echo $dob;
+echo $psw;
 
 echo "<br><br>";
 
 $sql =<<<EOF
-      INSERT INTO STUDENT_DETAILS (S_NAME, S_DOB, S_EMAIL, S_PASS, S_MOB)
-      VALUES ('$name', '$dob', '$email', '$psw', '$mob');
+      INSERT INTO STUDENT_DETAILS (C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS)
+      VALUES ('$name', '$uname', '$email', '$dob', '$psw');
 EOF;
 
    $ret = pg_query($db, $sql);
