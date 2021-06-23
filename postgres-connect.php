@@ -32,7 +32,7 @@ echo $psw;
 echo "<br><br>";
 
 $sql =<<<EOF
-      INSERT INTO STUDENT_DETAILS (C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS)
+      INSERT INTO CLIENT_DETAILS (C_NAME, C_UNAME, C_EMAIL, C_DOB, C_PASS)
       VALUES ('$name', '$uname', '$email', '$dob', '$psw');
 EOF;
 
